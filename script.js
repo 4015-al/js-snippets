@@ -10,7 +10,15 @@ const arrNotEmpty = (arr) => exists(arr) && Array.isArray(arr) && arr.length;
 // return the last char of a str
 const lastChar = (str) => str && str.length ? str[str.length-1] : undefined;
 
-// map an object
+/**
+ * map an object
+ *
+ * @param {Object} obj
+ * @param {function} fn mapping function
+ * @returns {Object} an object of the mapped elements
+ *
+ * @see https://stackoverflow.com/a/14810722/16953460
+ */
 const objectMap = (obj, fn) => Object.fromEntries(
   Object.entries(obj).map(
     ([k, v], i) => [k, fn(v, k, i)]
